@@ -1,0 +1,19 @@
+{
+    "contacts": [
+        {
+            "id": "25500630-c80d-46f9-8d25-ee81005ab824",
+            "name": "Pawan",
+            "email": "pawan@email.com"
+        },
+        {
+            "id": "80e97dcb-b7af-4850-9bfb-37966445d303",
+            "name": "pradeep",
+            "email": "pradeep@gmail.com"
+        },
+        {
+            "id": "981e53ef-b9bd-4e4d-908d-e90675c77b59",
+            "name": "mangesh",
+            "email": "mangesh@gmail.com"
+        }
+    ]
+}
