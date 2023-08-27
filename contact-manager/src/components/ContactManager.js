@@ -20,22 +20,28 @@ function ContactManager() {
         return response;
     }
 
-    const addContactHandler = (contact) => {
+    const addContactHandler = async (contact) => {
         console.log(contact);
-        setContacts([...contacts, { id: uuid(), ...contact }]);
+        const request = {
+            id: uuid(),
+            ...contact
+        }
+        const response = await api.post("/contacts", request)
+        setContacts([...contacts, response.data]);
         console.log("test");
     }
 
-    const removeContactHandler = (id) => {
+    const removeContactHandler = async (id) => {
+        await api.delete(`/contacts/${id}`);
         const updatedContactList = contacts.filter((contact) => {
             return contact.id !== id;
         })
         setContacts(updatedContactList);
     }
 
-    useEffect(() => {
-        //localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));
-    }, [contacts]);
+    // useEffect(() => {
+    //     //localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));
+    // }, []);
 
     useEffect(() => {
         // const retrieveContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
