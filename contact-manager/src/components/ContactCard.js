@@ -18,6 +18,11 @@ function ContactCard(props) {
             </div>
             <i className='right floated trash alternate outline icon' style={{ color: "red", marginTop: "7px" }}
                 onClick={() => { props.clickHandler(id) }} ></i>
+            <Link to={`/edit`} state={{ contactinfo: props.contact }}>
+                <i className='right floated edit alternate outline icon' style={{ color: "blue", marginTop: "7px", marginRight: "10px" }}
+                ></i>
+            </Link>
+
         </div>
     )
 }
